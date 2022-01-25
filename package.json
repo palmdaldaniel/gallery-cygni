@@ -1,0 +1,28 @@
+{
+  "name": "gallery-cygni",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "(cd backend && nodemon index.js) & http-server ./frontend -o",
+    "client": "http-server ./frontend -o",
+    "server": "nodemon backend/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/palmdaldaniel/gallery-cygni.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/palmdaldaniel/gallery-cygni/issues"
+  },
+  "homepage": "https://github.com/palmdaldaniel/gallery-cygni#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "http-server": "^14.1.0",
+    "nodemon": "^2.0.15"
+  }
+}
