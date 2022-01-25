@@ -1,5 +1,4 @@
-const url =
-  "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=f39440bbd537c7c2d8d8de2917899ed3&text=cat&per_page=12&page=1&format=json&nojsoncallback=1";
+const url = "http://localhost:3000/api/v1/search"
 
 let loader = false;
 
@@ -18,4 +17,11 @@ const getData = async () => {
   }
 };
 
-getData();
+
+const button  = document.querySelector('button')
+button.addEventListener('click', () => {
+
+  console.log('clicking');
+
+  getData();
+})
