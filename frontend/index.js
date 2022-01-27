@@ -1,8 +1,17 @@
 const form = document.querySelector("#form");
 const input = document.querySelector("#search-input");
 const galleryWrapper = document.querySelector(".gallery-wrapper");
-
 const url = "http://localhost:3000/api/v1/search";
+
+(function () {
+  console.log('hello');
+  galleryWrapper.innerHTML = 
+  `<div>
+    hello
+  </div>`
+})();
+
+
 
 let loader = false;
 
