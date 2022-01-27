@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cygni - Gallery</title>
-</head>
-<body>
-    
+    <link rel="stylesheet" src="app.scss" />
+  </head>
+  <body>
+    <h1>Search for what you like</h1>
+    <form id="form">
+      <label for="search">Give it a go</label><br />
+      <input
+        type="text"
+        name="search"
+        placeholder="Try search for a cat or a dog?"
+      /><br />
+      <input type="submit" value="Search" />
+    </form> 
 
-    <h1>hello sir we are coocking</h1>
+    <div class="gallery-wrapper"></div>
 
-    <button>Click me</button>
-
-   <script src="index.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>

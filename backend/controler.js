@@ -1,19 +1,15 @@
 const axios = require("axios");
+const apiKey = "f39440bbd537c7c2d8d8de2917899ed3"
+const baseUrl = "https://www.flickr.com/services/rest/?method=flickr.photos.search"
 
-const url =
-  "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=f39440bbd537c7c2d8d8de2917899ed3&text=cat&per_page=12&page=1&format=json&nojsoncallback=1";
 
 const getDataByInput = async (req, res) => {
-  console.log("is something happening");
-
+  const searchstring = req.query.search
   try {
-    let result = await axios.get(url);
-
-    console.log(result.data.photos);
-
+    let result = await axios.get(`${baseUrl}&api_key=${apiKey}&text=${searchstring}&per_page=12&page=1&format=json&nojsoncallback=1`);
     res.json({ msg: "response ok", data: result.data.photos });
   } catch (error) {
-    console.log("something went wrong", error);
+    res.json({msg: "bad request"})
   }
 };
 
