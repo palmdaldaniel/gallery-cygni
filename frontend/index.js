@@ -3,6 +3,7 @@ const input = document.querySelector("#search-input");
 const galleryWrapper = document.querySelector(".gallery-wrapper");
 const url = "http://localhost:3000/api/v1/search";
 
+//  output welcome message when app fires upp 🔥
 (function () {
   console.log('hello');
   galleryWrapper.innerHTML = 
