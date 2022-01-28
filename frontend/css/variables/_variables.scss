@@ -1,0 +1,26 @@
+
+//Colors
+$primary: #2fc356;
+$primary-hover: #25a146;
+$secondary: #484848;
+$gray: #a5a6a6;
+$font: helvetica;
+
+
+//Font sizes
+$body: 16px;
+$hOne: 40px;
+$hTwo: 30px;
+$hThree: 25px;
+$hFour: 20px;
+
+
+//Screen sizes
+$xs: #{"only screen and (min-width: 300px)"};
+$sm: #{"only screen and (min-width: 576px)"};
+$md: #{"only screen and (min-width: 768px)"};
+$lg: #{"only screen and (min-width: 950px)"};
+
+
+// box shadow
+$boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.125), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

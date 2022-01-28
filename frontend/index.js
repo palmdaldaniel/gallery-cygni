@@ -3,17 +3,6 @@ const input = document.querySelector("#search-input");
 const galleryWrapper = document.querySelector(".gallery-wrapper");
 const url = "http://localhost:3000/api/v1/search";
 
-//  output welcome message when app fires upp 🔥
-(function () {
-  console.log('hello');
-  galleryWrapper.innerHTML = 
-  `<div>
-    hello
-  </div>`
-})();
-
-
-
 let loader = false;
 
 const getData = async (value) => {
@@ -33,13 +22,14 @@ const getData = async (value) => {
 
 const buildHtmlOutput = ({ photo }) => {
   const content = photo.map((item, i) => {
+    const url = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg`
+    
     return `
-      <div class="galler-item">
         <figure>
-          <img src="https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg" alt></img>
+          <img src="${url}</img>
           <figcaption>${item.title}<figcaption>
         </figure>
-      </div>`;
+      `;
   });
 
   galleryWrapper.innerHTML = content.join(" ");

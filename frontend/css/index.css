@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: helvetica;
+}
+
+h1,
+h3,
+h5,
+p,
+input {
+  color: #484848;
+  margin-bottom: 1em;
+  line-height: 1.15em;
+  letter-spacing: 0.25px;
+}
+
+p {
+  font-size: 16px;
+}
+
+header {
+  height: 70px;
+  background: #2fc356;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+header p {
+  font-size: 25px;
+  color: white;
+  font-weight: bolder;
+  margin: 1em;
+}
+header p:last-child {
+  display: none;
+}
+@media only screen and (min-width: 576px) {
+  header p:last-child {
+    display: block;
+  }
+}
+
+.intro-content {
+  margin: 0 auto;
+  width: 300px;
+}
+.intro-content h1 {
+  font-size: 30px;
+}
+.intro-content h3 {
+  font-size: 20px;
+}
+@media only screen and (min-width: 576px) {
+  .intro-content {
+    width: 500px;
+  }
+}
+
+main .form-wrapper {
+  text-align: center;
+  width: 90%;
+  margin: 2em auto;
+}
+main .form-wrapper form {
+  display: flex;
+  justify-content: center;
+}
+main .form-wrapper form input {
+  width: 300px;
+  border: none;
+  border-bottom: 3px solid #a5a6a6;
+  outline: none;
+  margin-bottom: 0.8em;
+  padding: 0.2em 0;
+  font-size: 16px;
+}
+main .form-wrapper form input:focus {
+  border-bottom: 3px solid #2fc356;
+}
+main .form-wrapper form input::-moz-placeholder {
+  font-size: 16px;
+  color: #484848;
+}
+main .form-wrapper form input:-ms-input-placeholder {
+  font-size: 16px;
+  color: #484848;
+}
+main .form-wrapper form input::placeholder {
+  font-size: 16px;
+  color: #484848;
+}
+@media only screen and (min-width: 576px) {
+  main .form-wrapper form input {
+    width: 500px;
+  }
+}
+main .form-wrapper form button {
+  width: 100px;
+  border-radius: 5px;
+  padding: 0.5em 1.5em;
+  display: block;
+  background: #2fc356;
+  border: #2fc356;
+  cursor: pointer;
+  color: white;
+}
+main .form-wrapper form button:hover {
+  background: #25a146;
+  border: #25a146;
+}
+main .form-wrapper form button:disabled {
+  background: grey;
+  border: grey;
+}
+main .gallery-wrapper {
+  height: 200px;
+  width: 300px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  gap: 5px;
+}
+main .gallery-wrapper figure {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .gallery-wrapper figure img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 200px;
+  margin-bottom: 1em;
+}
+@media only screen and (min-width: 768px) {
+  main .gallery-wrapper {
+    width: 700px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 950px) {
+  main .gallery-wrapper {
+    width: 930px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}/*# sourceMappingURL=index.css.map */

@@ -18,8 +18,6 @@ app.use(express.json());
 //Routes setup
 app.use('/api/v1/', searchRoute)
 
-
-
 app.listen(port, (err) => {
     if(err) {
         console.log('Server could not start');

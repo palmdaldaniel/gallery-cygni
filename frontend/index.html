@@ -5,21 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cygni - Gallery</title>
-    <link rel="stylesheet" src="app.scss" />
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <h1>Search for what you like</h1>
-    <form id="form">
-      <label for="search">Give it a go</label><br />
-      <input
-        type="text"
-        name="search"
-        placeholder="Try search for a cat or a dog?"
-      /><br />
-      <input type="submit" value="Search" />
-    </form> 
+    <header>
+      <p>Cygni - Gallery</p>
+      <p>Daniel Palmdal</p>
+    </header>
 
-    <div class="gallery-wrapper"></div>
+    <div class="intro-content">
+      <h1>This is an gallery app powered by The Flikr Api</h1>
+      <h3>
+        Try search for your favorite animal, city or something else, it's upp to
+        you
+      </h3>
+    </div>
+    <main>
+      <div class="form-wrapper">
+        <form id="form">
+          <div>
+            <input
+              type="text"
+              name="search"
+              placeholder="Try search for a cat or a dog?"
+            /><br />
+            <button type="submit">Search</button>
+          </div>
+        </form>
+      </div>
+      <div class="gallery-wrapper">
+      </div>
+    </main>
 
     <script src="index.js"></script>
   </body>
