@@ -5,6 +5,8 @@ const url = "http://localhost:3000/api/v1/search";
 
 let loader = false;
 
+let cache;
+
 const getData = async (value) => {
   try {
     loader = true;
@@ -15,6 +17,10 @@ const getData = async (value) => {
 
     console.log("result", result);
     buildHtmlOutput(result.data);
+
+    cache = {
+      [`${value}`]: result.data,
+    };
   } catch (error) {
     console.log(error);
   }
@@ -22,8 +28,8 @@ const getData = async (value) => {
 
 const buildHtmlOutput = ({ photo }) => {
   const content = photo.map((item, i) => {
-    const url = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg`
-    
+    const url = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg`;
+
     return `
         <figure>
           <img src="${url}</img>
@@ -38,6 +44,7 @@ const buildHtmlOutput = ({ photo }) => {
 const handleSubmit = () => {};
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+console.log('cache', cache );
   const inputText = form.search.value.trim();
   getData(inputText);
   form.reset();
