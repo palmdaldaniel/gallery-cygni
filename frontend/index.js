@@ -2,7 +2,8 @@
 const form = document.querySelector("#form");
 const input = document.querySelector("#search-input");
 const galleryWrapper = document.querySelector(".gallery-wrapper");
-const imageGrid = document.querySelector(".image-grid")
+const wrapperGallery = document.querySelector(".wrapper-gallery");
+const imageGrid = document.querySelector(".wrapper-gallery-grid")
 
 const spinner = document.querySelector(".loading");
 const formButton = document.querySelector("button");
@@ -22,7 +23,7 @@ const getData = async (value) => {
     formButton.disabled = false
     spinner.classList.remove("show");
     buildHtmlOutput(result.data);
-
+    wrapperGallery.classList.add("spacer")
     // cache = {
     //   [`${value}`]: result.data,
     // };
@@ -48,6 +49,7 @@ const buildHtmlOutput = ({ photo }) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   imageGrid.innerHTML = ''
+  wrapperGallery.classList.remove("spacer")
 
 
   //console.log('cache', cache );

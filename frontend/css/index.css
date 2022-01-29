@@ -117,36 +117,37 @@ main .form-wrapper form button:disabled {
 }
 main .gallery-wrapper {
   width: 90%;
-  height: 96vh;
   padding: 0.5em;
   margin: 0 auto;
-  background: #a5a6a615;
   border-radius: 2px;
 }
-main .gallery-wrapper .image-grid {
+main .gallery-wrapper .wrapper-gallery {
+  background-color: #a5a6a615;
+}
+main .gallery-wrapper .wrapper-gallery-grid {
   margin: 0 auto;
   display: grid;
   place-items: center;
   gap: 15px;
 }
 @media only screen and (min-width: 768px) {
-  main .gallery-wrapper .image-grid {
+  main .gallery-wrapper .wrapper-gallery-grid {
     width: 700px;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media only screen and (min-width: 950px) {
-  main .gallery-wrapper .image-grid {
+  main .gallery-wrapper .wrapper-gallery-grid {
     width: 920px;
     grid-template-columns: repeat(3, 1fr);
   }
 }
-main .gallery-wrapper .image-grid .loader-wrapper {
+main .gallery-wrapper .wrapper-gallery-grid .loader-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-main .gallery-wrapper .image-grid figure {
+main .gallery-wrapper .wrapper-gallery-grid figure {
   background: white;
   border-radius: 2px;
   width: 300px;
@@ -157,11 +158,11 @@ main .gallery-wrapper .image-grid figure {
   transition: all 0.2s ease-in-out;
   opacity: 0.8;
 }
-main .gallery-wrapper .image-grid figure:hover {
+main .gallery-wrapper .wrapper-gallery-grid figure:hover {
   transform: scale(1.01);
   opacity: 1;
 }
-main .gallery-wrapper .image-grid figure img {
+main .gallery-wrapper .wrapper-gallery-grid figure img {
   -o-object-fit: contain;
      object-fit: contain;
   width: 100%;
@@ -182,6 +183,10 @@ footer p {
   color: white;
   font-weight: 500;
   margin-bottom: 0;
+}
+
+.spacer {
+  padding: 3em;
 }
 
 .loading {
