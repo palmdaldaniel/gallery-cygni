@@ -1,12 +1,11 @@
 // get element the user will interact with.
 const form = document.querySelector("#form");
-const input = document.querySelector("#search-input");
-const wrapper = document.querySelector(".wrapper");
-const wrapperGallery = document.querySelector(".wrapper-gallery");
-const imageGrid = document.querySelector(".wrapper-gallery-grid");
-
-const spinner = document.querySelector(".loading");
 const formButton = document.querySelector("button");
+const imageGrid = document.querySelector(".wrapper-gallery-grid");
+const input = document.querySelector("#search-input");
+const spinner = document.querySelector(".loading");
+const userFeedBack = document.querySelector(".user-feedback")
+const wrapperGallery = document.querySelector(".wrapper-gallery");
 
 const url = "http://localhost:3000/api/v1/search";
 
@@ -29,8 +28,6 @@ const getData = async (value) => {
     }
     buildGalleryOutPut(result.data);
 
-    wrapperGallery.classList.add("spacer");
-
     //  add data to cache
     if (!checkCache(value)) {
       cache.push({
@@ -43,7 +40,8 @@ const getData = async (value) => {
 };
 
 const buildGalleryOutPut = ({ photo }) => {
-  const content = photo.map((item, i) => {
+ 
+  const content = photo.map((item) => {
     const url = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg`;
 
     return `
@@ -53,37 +51,45 @@ const buildGalleryOutPut = ({ photo }) => {
       `;
   });
 
+  // add spacing to the background of the grid.
+  wrapperGallery.classList.add("spacer");
+
   imageGrid.innerHTML = content.join(" ");
 };
 
 const buildUserFeedbackOutput = (value) => {
   let content;
   if (value === "no data") {
-    content = `<div class="user-feedback"><p>Sorry, we found nothing that matched your search!<p></div>`;
+    content = `<p>Sorry, we found nothing that matched your search!<p>`;
   } else {
-    content = `<div class="user-feedback">Something went wrong, try refresh the page!</div>`;
+    content = `Something went wrong, try refresh the page!</p>`;
   }
 
-  wrapper.innerHTML = content;
+  userFeedBack.innerHTML = content;
+
+
+ 
 };
+
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
+  
   imageGrid.innerHTML = "";
+  userFeedBack.innerHTML = ""
   wrapperGallery.classList.remove("spacer");
 
-  //console.log('cache', cache );
   const inputText = form.search.value.trim();
 
+
+  // check if same data is in cache already 
   const hasCache = checkCache(inputText);
 
   if (hasCache) {
     buildGalleryOutPut(hasCache);
-    console.log("has cache");
     return;
   }
 
-  console.log("has no cache");
   getData(inputText);
 });
 

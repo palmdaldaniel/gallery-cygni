@@ -10,8 +10,6 @@ const searchRoute = require('./routes')
 
 const port = 3000;
 
-// server setup
-
 // Make sure the server can read the req.body object
 app.use(express.json());
 

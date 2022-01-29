@@ -1,0 +1,15 @@
+@import "./variables/variables";
+
+.hero {
+    h1 {
+      font-size: $hTwo;
+    }
+    h3 {
+      font-size: $hFour;
+    }
+    margin: 0 auto;
+    width: 300px;
+    @media #{$sm} {
+      width: 500px;
+    }
+  }

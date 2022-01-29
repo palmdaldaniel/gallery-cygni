@@ -1,0 +1,23 @@
+@import "./variables/variables";
+
+header {
+    height: 70px;
+    background: $primary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+    p {
+      font-size: $hThree;
+      color: white;
+      font-weight: bolder;
+      margin: 1em;
+    }
+  
+    p:last-child {
+      display: none;
+      @media #{$sm} {
+        display: block;
+      }
+    }
+  }
