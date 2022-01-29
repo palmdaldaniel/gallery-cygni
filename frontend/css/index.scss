@@ -108,15 +108,16 @@ main {
     }
   }
 
-  .gallery-wrapper {
+  .wrapper {
     width: 90%;
     padding: 0.5em;
     margin: 0 auto;
 
     border-radius: 2px;
 
-    .wrapper-gallery {
+    &-gallery {
       background-color: $gray-faded;
+      width: 100%;
      
 
       &-grid {
@@ -126,7 +127,7 @@ main {
         gap: 15px;
 
         @media #{$md} {
-          width: 700px;
+          width: 650px;
           grid-template-columns: repeat(2, 1fr);
         }
         @media #{$lg} {
@@ -156,7 +157,7 @@ main {
             opacity: 1;
           }
           img {
-            object-fit: contain;
+            object-fit: cover;
             width: 100%;
             height: 100%;
           }
@@ -185,7 +186,7 @@ footer {
 }
 
 .spacer {
-  padding: 3em;
+  padding: 3em 0;
 }
 
 
