@@ -121,6 +121,11 @@ main .wrapper {
   margin: 0 auto;
   border-radius: 2px;
 }
+main .wrapper .user-feedback {
+  height: 50px;
+  display: grid;
+  place-items: center;
+}
 main .wrapper-gallery {
   background-color: #a5a6a615;
   width: 100%;

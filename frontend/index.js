@@ -1,6 +1,7 @@
 // get element the user will interact with.
 const form = document.querySelector("#form");
 const input = document.querySelector("#search-input");
+const wrapper = document.querySelector(".wrapper");
 const wrapperGallery = document.querySelector(".wrapper-gallery");
 const imageGrid = document.querySelector(".wrapper-gallery-grid");
 
@@ -21,22 +22,27 @@ const getData = async (value) => {
 
     formButton.disabled = false;
     spinner.classList.remove("show");
-    buildHtmlOutput(result.data);
+
+    if (result.data.photo.length === 0) {
+      buildUserFeedbackOutput("no data");
+      return;
+    }
+    buildGalleryOutPut(result.data);
+
     wrapperGallery.classList.add("spacer");
 
     //  add data to cache
     if (!checkCache(value)) {
-      console.log(cache);
       cache.push({
         [`${value}`]: result.data,
       });
     }
   } catch (error) {
-    console.log(error);
+    buildUserFeedbackOutput();
   }
 };
 
-const buildHtmlOutput = ({ photo }) => {
+const buildGalleryOutPut = ({ photo }) => {
   const content = photo.map((item, i) => {
     const url = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg`;
 
@@ -50,6 +56,16 @@ const buildHtmlOutput = ({ photo }) => {
   imageGrid.innerHTML = content.join(" ");
 };
 
+const buildUserFeedbackOutput = (value) => {
+  let content;
+  if (value === "no data") {
+    content = `<div class="user-feedback"><p>Sorry, we found nothing that matched your search!<p></div>`;
+  } else {
+    content = `<div class="user-feedback">Something went wrong, try refresh the page!</div>`;
+  }
+
+  wrapper.innerHTML = content;
+};
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -62,7 +78,7 @@ form.addEventListener("submit", (e) => {
   const hasCache = checkCache(inputText);
 
   if (hasCache) {
-    buildHtmlOutput(hasCache);
+    buildGalleryOutPut(hasCache);
     console.log("has cache");
     return;
   }

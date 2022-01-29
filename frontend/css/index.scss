@@ -112,13 +112,17 @@ main {
     width: 90%;
     padding: 0.5em;
     margin: 0 auto;
-
     border-radius: 2px;
+
+    .user-feedback {
+      height: 50px;
+      display: grid;
+      place-items: center;
+    }
 
     &-gallery {
       background-color: $gray-faded;
       width: 100%;
-     
 
       &-grid {
         margin: 0 auto;
@@ -189,7 +193,6 @@ footer {
   padding: 3em 0;
 }
 
-
 // loader animation
 .loading {
   width: 5rem;
@@ -206,6 +209,8 @@ footer {
 .show {
   display: block;
 }
+
+
 
 @keyframes spin {
   from {
