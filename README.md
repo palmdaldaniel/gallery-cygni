@@ -1,6 +1,6 @@
 # Gallery-cygni
 
-Welcome to The Gallery Cygni App powered by the Flikr api.
+Welcome to The Gallery Cygni App powered by the Flickr api.
 
 ## To start
    1. Clone the repo
