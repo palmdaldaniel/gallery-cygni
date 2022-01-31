@@ -10,9 +10,9 @@ const getDataByInput = async (req, res) => {
       `${baseUrl}&api_key=${apiKey}&text=${searchstring}&per_page=12&page=1&format=json&nojsoncallback=1`
     );
 
-    res.json({ msg: "response ok", data: result.data.photos });
+    res.status(200).json({ msg: "response ok", data: result.data.photos });
   } catch (error) {
-    res.json({ msg: "bad request" });
+    res.status(500).json({ msg: "bad request" });
   }
 };
 
